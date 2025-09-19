@@ -1,0 +1,28 @@
+<div class="circle-container"
+     [class.audio-active]="isAudioActive"
+     #circleContainer>
+
+  <!-- Layer 1 - Outermost with blur -->
+  <div class="circle-layer layer-1 mood-okay"></div>
+
+  <!-- Layer 2 - Medium blur -->
+  <div class="circle-layer layer-2 mood-okay"></div>
+
+  <!-- Layer 3 - Inner glow -->
+  <div class="circle-layer layer-3" #layer3></div>
+
+  <!-- Layer 4 - Inner reactive -->
+  <div class="circle-layer layer-4" #layer4></div>
+
+  <!-- Layer 5 - Core -->
+  <div class="circle-layer layer-5 mood-okay" #layer5></div>
+
+  <!-- Floating bubbles -->
+  <div class="bubble" *ngFor="let bubble of bubbles; index as i"
+       [style.top.%]="bubble.top"
+       [style.left.%]="bubble.left"
+       [style.width.px]="bubble.size"
+       [style.height.px]="bubble.size"
+       [style.animation-delay.s]="bubble.delay">
+  </div>
+</div>

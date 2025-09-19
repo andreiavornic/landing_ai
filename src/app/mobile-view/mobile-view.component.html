@@ -1,0 +1,251 @@
+@if (isConnected) {
+  <div class="wave-block">
+    <div class="circle-nutemi">
+      <app-circle-nutemi></app-circle-nutemi>
+    </div>
+    <div class="btn-speck">
+      <button (click)=" stopVoiceAssistant()">
+        <span class="active">
+        </span></button>
+    </div>
+  </div>
+}
+@if (isLoading) {
+  <div class="loading">Please wait...</div>
+}
+
+<div class="mobile-block">
+  <div class="container-fluid">
+    <div class="block-m-1">
+      <div class="btn-speck">
+        <button (click)="!isConnected ? startVoiceAssistant(): stopVoiceAssistant()"><span [class.active]="isConnected">
+          @if (!isConnected) {
+            <ng-lottie [options]="options"/>
+          }
+        </span></button>
+      </div>
+
+      <div class="top-data">
+        <div class="logo"><img src="/images/30.svg" alt=""></div>
+        <h2 class="title">
+          Your Calm Space for
+        </h2>
+        <div class="balanced">balanced eating</div>
+        <p class="sub-title">Nutemi helps you build healthy habits with mindful nutrition and gentle daily
+          support.</p>
+      </div>
+      <div class="phone">
+
+      </div>
+
+    </div>
+    <div class="block-m-2" id="futures">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="title">Breathe deeply. Eat gently. Feel whole.</h3>
+          <p class="sub-title">Gentle guidance for mindful, healthy living.</p>
+          <div class="links">
+            <a class="btn btn-primary" target="_blank" [href]=appUrl>
+              <img src="/images/1.svg" alt="">
+              <span>App Store</span>
+            </a>
+<!--            <a class="btn btn-primary" target="_blank" [href]=appUrl>-->
+<!--              <img src="/images/2.svg" alt="">-->
+<!--              <span>Google Play</span>-->
+<!--            </a>-->
+          </div>
+          <div class="item-bl-2">
+            <h3>Mindful Meals, Tracked<br>with Ease</h3>
+            <p>Record your meals with clarity and simplicity. Small steps build strong, lasting habits.</p>
+            <div class="preview"><img src="/images/11.png" alt=""></div>
+          </div>
+          <div class="item-bl-2 center">
+            <div class="content-bl">
+              <h3>Your Inner Balance,<br>Visualized</h3>
+              <p>Gentle, calming feedback helps you stay in tune with your body and your progress.</p>
+              <div class="cta">
+                <a href="{{appUrl}}" target="_blank">Let’s Begin</a>
+              </div>
+            </div>
+            <div class="circle">
+              <app-circle-nutemi></app-circle-nutemi>
+            </div>
+          </div>
+          <div class="item-bl-2">
+            <h3>Clear Progress,<br>Every Day</h3>
+            <p>See your goals, calories, and achievements — all in one peaceful, easy-to-understand space.</p>
+            <div class="preview"><img src="/images/10.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block-m-3" id="about">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="title">What Makes Nutemi Different?</h3>
+          <p class="sub-title">Unlike traditional apps, Nutemi listens to how you feel, understands your emotional
+            patterns, and guides you with mindful nutrition advice — not just numbers or calories.</p>
+          <div class="slide-bl3">
+            <ul>
+              <li>
+                <button [class.active]="curentSlide === 0" (click)="activateSlide(0)">Tracks meals & hydration</button>
+              </li>
+              <li>
+                <button [class.active]="curentSlide === 1" (click)="activateSlide(1)">Supports your emotions</button>
+              </li>
+              <li>
+                <button [class.active]="curentSlide === 2" (click)="activateSlide(2)">AI-powered, voice-friendly
+                </button>
+              </li>
+              <li>
+                <button [class.active]="curentSlide === 3" (click)="activateSlide(3)">Calm design, human warmth</button>
+              </li>
+            </ul>
+            <div class="phone-slide">
+              <div class="shape-phone">
+                <div class="img-container">
+                  <img src="/images/{{imgs[curentSlide]}}.png" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="cta">
+              <a [href]=appUrl target="_blank">Try It Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block-m-4">
+      <div class="row">
+        <div class="col-12">
+          <h3 class="title">It’s Not Just Food. It’s How You Feel.</h3>
+          <p class="sub-title">With gentle guidance, emotional awareness, and mindful nutrition insights, Nutemi helps
+            you build habits that nourish both your body and your mind.</p>
+          <div class="item-bl-4">
+            <h3>Mindful Nutrition Tracking</h3>
+            <p>Combining intelligent insights with a human touch to support real, sustainable change.</p>
+            <div class="preview">
+              <img src="/images/16.svg" alt="">
+            </div>
+          </div>
+          <div class="item-bl-4 bg-bl-4">
+            <h3>Hydration Reminders</h3>
+            <p>Stay hydrated effortlessly with kind, daily reminders — small steps, big difference.</p>
+            <div class="preview watter">
+              <img src="/images/26.png" alt="">
+            </div>
+          </div>
+          <div class="item-bl-4">
+            <h3>Motivational Support</h3>
+            <p>Nutemi cares how you feel and adapts to keep you encouraged and balanced.</p>
+            <div class="preview">
+              Hi Mike! Today feels<br>calm 🥰 Let’s keep the<br>balance going
+            </div>
+          </div>
+          <div class="item-bl-4 bg-bl-4">
+            <h3>AI-Powered with Empathy</h3>
+            <p>Combining intelligent insights with a human touch to support real, sustainable change.</p>
+            <div class="preview big">
+              <img src="/images/32.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="block-m-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="slide-bl5">
+            <h3 class="title">Your Emotions Matter. Nutemi is listening</h3>
+            <ul class="emoji">
+              <li>😠</li>
+              <li>😞</li>
+              <li>😰</li>
+              <li>😐</li>
+              <li>🙂</li>
+              <li>🥰</li>
+              <li>😄</li>
+              <li>😍</li>
+            </ul>
+            <p class="sub-title">No matter how you feel today, Nutemi helps you stay connected to your body, your
+              progress, and your goals — with kindness, not pressure.</p>
+            <div class="links">
+              <a class="btn btn-primary" target="_blank" [href]=appUrl>
+                <img src="/images/20.svg" alt="">
+                <span>App Store</span>
+              </a>
+<!--              <a class="btn btn-primary" target="_blank" [href]=appUrl>-->
+<!--                <img src="/images/21.svg" alt="">-->
+<!--                <span>Google Play</span>-->
+<!--              </a>-->
+            </div>
+          </div>
+          <div class="stars">⭐️⭐️⭐️⭐️⭐️</div>
+          <h3 class="title">
+            Change the way you think about food — with AI, Empathy, and Calm.
+          </h3>
+          <p class="sub-title"><strong>Speak naturally.</strong> Nutemi listens, understands, and guides you in real
+            time — <strong>with care, clarity, and calm.</strong></p>
+          <div class="action">
+            <div class="btn-speck">
+              <button (click)="!isConnected ? startVoiceAssistant(): stopVoiceAssistant()">
+                <span [class.active]="isConnected">
+                  @if (!isConnected) {
+                    <ng-lottie [options]="options"/>
+                  }
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="question">Have a question?</div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="logo-footer">
+        <a href="{{appUrl}}" target="_blank"><img src="/images/30.svg" alt=""></a>
+        <p>Nutemi cares how you feel and adapts to keep you encouraged and balanced.</p>
+      </div>
+      <div class="menu">
+        <div class="row">
+          <div class="col-6">
+            <ul>
+              <li>Menu:</li>
+              <li><a [routerLink]="['/']" fragment="futures">Features</a></li>
+              <li><a [routerLink]="['/']" fragment="about">About Nutemi</a></li>
+              <li><a href="#">AI Disclaimer</a></li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Social:</li>
+              <li><a href="https://www.instagram.com/nutemi.ai/" target="_blank">Instagram</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61574534271761" target="_blank">Facebook</a></li>
+              <li><a href="https://www.tiktok.com/@nutemi.ai" target="_blank">TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="links">
+        <a class="btn btn-primary" [href]=appUrl target="_blank">
+          <img src="/images/1.svg" alt="">
+          <span>App Store</span>
+        </a>
+<!--        <a class="btn btn-primary" [href]=appUrl target="_blank">-->
+<!--          <img src="/images/2.svg" alt="">-->
+<!--          <span>Google Play</span>-->
+<!--        </a>-->
+
+      </div>
+    </footer>
+    <div class="prod-hunt">
+      <a href="https://www.producthunt.com/products/nutemi-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-nutemi&#0045;ai" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1009149&theme=light&t=1756197680604" alt="Nutemi&#0032;AI - AI&#0045;powered&#0032;meal&#0032;and&#0032;nutrient&#0032;tracking | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+    </div>
+    <div class="copyright">
+      © 2024 - {{ year }} Nutemi — Your Calm Nutrition Companion. All rights reserved.
+    </div>
+
+
+  </div>
+
+</div>

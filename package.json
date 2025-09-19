@@ -18,6 +18,13 @@
     "@angular/platform-browser": "^18.1.0",
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
+    "@omnedia/ngx-typewriter": "^3.1.1",
+    "@popperjs/core": "^2.11.8",
+    "angular-typing-animation": "^0.5.4",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.7",
+    "lottie-web": "^5.13.0",
+    "ngx-lottie": "^20.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"

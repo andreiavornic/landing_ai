@@ -1,0 +1,170 @@
+// circle-nutemi.component.scss
+
+.circle-container {
+  position: relative;
+  width: 193px;
+  height: 193px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-layer {
+  position: absolute;
+  border-radius: 50%;
+  transition: transform 0.15s ease-out;
+}
+
+/* Layer 1 - Largest with blur */
+.layer-1 {
+  width: 100%;
+  height: 100%;
+  filter: blur(40px);
+  opacity: 0.3;
+  animation: pulse-gentle 4s ease-in-out infinite;
+}
+
+/* Layer 2 - Medium blur */
+.layer-2 {
+  width: 86%;
+  height: 86%;
+  filter: blur(25px);
+  opacity: 0.6;
+  animation: pulse-medium 3.5s ease-in-out infinite 0.5s;
+}
+
+/* Layer 3 - Inner glow */
+.layer-3 {
+  width: 90%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 0 30px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  animation: audio-reactive 2s ease-in-out infinite;
+}
+
+/* Layer 4 - Inner reactive */
+.layer-4 {
+  width: 73%;
+  height: 73%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 0.39),
+    0 0 15px rgba(255, 255, 255, 0.15);
+  animation: audio-reactive-strong 1.8s ease-in-out infinite 0.3s;
+}
+
+/* Layer 5 - Core */
+.layer-5 {
+  width: 56%;
+  height: 56%;
+  opacity: 0.3;
+  box-shadow:
+    inset 0 0 40px 6px rgba(255, 255, 255, 0.57),
+    0 0 25px rgba(255, 255, 255, 0.3);
+  animation: core-glow 6s ease-in-out infinite;
+}
+
+/* Mood okay gradient (default state) */
+.mood-okay {
+  background: radial-gradient(circle at 50% 50%, #6A71BB, #EA8DD6, #F096DE, #EBDAF4);
+  background-size: 400% 400%;
+  animation: okay-flow 10s ease-in-out infinite;
+}
+
+/* Floating bubbles */
+.bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float-bubble 8s ease-in-out infinite;
+}
+
+/* Audio reactive indicator */
+.audio-indicator {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #56D856;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.audio-active .audio-indicator {
+  opacity: 1;
+  animation: pulse-indicator 1s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pulse-medium {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes audio-reactive {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  75% { transform: scale(1.05); }
+}
+
+@keyframes audio-reactive-strong {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.15); }
+  60% { transform: scale(1.08); }
+}
+
+@keyframes core-glow {
+  0%, 100% {
+    box-shadow:
+      inset 0 0 40px 6px rgba(255, 255, 255, 0.57),
+      0 0 25px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 50px 8px rgba(255, 255, 255, 0.7),
+      0 0 35px rgba(255, 255, 255, 0.5);
+  }
+}
+
+@keyframes okay-flow {
+  0%, 100% { background-position: 50% 50%; }
+  25% { background-position: 0% 25%; }
+  75% { background-position: 100% 75%; }
+}
+
+@keyframes float-bubble {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-10px) rotate(90deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-5px) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-15px) rotate(270deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-indicator {
+  0%, 100% { transform: scale(1); }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #56D856;
+  }
+}

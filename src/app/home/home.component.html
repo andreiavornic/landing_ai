@@ -1,0 +1,445 @@
+
+
+
+@if(isDesktop) {
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="main-block">
+          <div class="speech-block">
+            <app-speech></app-speech>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="menu">
+                  <div class="row">
+                    <div class="col-12 col-md-6">
+                      <div class="logo">
+                      <span class="icon">
+                        N
+                      </span>
+                        Nutemi
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <div class="links">
+                        <a class="btn btn-primary" target="_blank" [href]=appUrl>
+                          <img src="/images/1.svg" alt="">
+                          <span>App Store</span>
+                        </a>
+<!--                        <a class="btn btn-primary" target="_blank" [href]=appUrl>-->
+<!--                          <img src="/images/2.svg" alt="">-->
+<!--                          <span>Google Play</span>-->
+<!--                        </a>-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="headline-lead">
+                  <h1 animateOnScroll="fadeInUp"
+                      [animationDelay]="200">Your Calm Space for </h1>
+                  <div class="changer-message">balanced eating</div>
+                  <p animateOnScroll="fadeInUp"
+                     [animationDelay]="400">Nutemi is a free and open-source
+                    application that helps you to manage your nutrition and health.</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="app-description">
+                  <div class="phone">
+                    <div class="progress-direction"
+                         animateOnScroll="fadeInUp"
+                         [animationDelay]="200">
+                      <img src="/images/5.svg" alt="">
+                    </div>
+                    <div class="watter-direction"
+                         animateOnScroll="fadeInRight"
+                         [animationDelay]="600">
+                      <img src="/images/7.svg" alt="">
+                    </div>
+                    <div class="bobble-direction"
+                         animateOnScroll="fadeInDown"
+                         [animationDelay]="600">
+                      <div class="inner-data">
+                        <span class="text-msg">Let's try a lighter dinner<br>and more hydration.</span>
+                      </div>
+                    </div>
+                    <div class="start-specking">
+                      <div class="arrow-btn"></div>
+                      <div class="txt">Speck with Nutemi</div>
+                    </div>
+                    <button class="btn-speech" animateOnScroll="bounceIn"
+                            [animationDelay]="1600"
+                            (click)="isConnected ? stopVoiceAssistant() : startVoiceAssistant()">
+                      <div class="outer">
+                        <div class="inner">
+                          <div class="animated-speech">
+                            @if (isConnected) {
+                              <div class="stop-q"></div>
+                            } @else {
+                              <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"/>
+                            }
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                    <img src="/images/6.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title-block">
+            <h2 animateOnScroll="fadeIn"
+                [animationDelay]="1600" [threshold]="1">Breathe deeply. Eat gently. Feel whole.</h2>
+            <p animateOnScroll="fadeIn"
+               [animationDelay]="1800" [threshold]="1">Gentle guidance for mindful, healthy
+              living.</p>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="block-item">
+            <h3>Mindful Meals, Tracked<br>with Ease</h3>
+            <p>Record your meals with clarity and simplicity. Small steps build strong, lasting habits.</p>
+            <div class="img-representation" animateOnScroll="fadeInDown"
+                 [threshold]="1"
+                 [hideInitially]="true"
+                 [animationDelay]="1000">
+              <img src="/images/11.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="block-item center-item">
+            <div class="back-effect">
+              <app-circle-nutemi></app-circle-nutemi>
+            </div>
+            <div class="text-inner-circle">
+              <h3>Your Inner Balance,<br>Visualized</h3>
+              <p>Gentle, calming feedback helps you stay in tune with your body and your progress.</p>
+            </div>
+            <div class="action">
+              <button class="glow-btn" (click)="redirectToExternalLink()">
+                Let’s Begin
+              </button>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="block-item">
+            <h3>Clear Progress,<br>Every Day</h3>
+            <p>See your goals, calories, and achievements — all in one peaceful, easy-to-understand space.</p>
+            <div class="img-representation"
+                 animateOnScroll="fadeInUp"
+                 [threshold]="1"
+                 [hideInitially]="true"
+                 [animationDelay]="1000">
+              <img src="/images/10.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="block block-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title-block">
+            <h2>What Makes Nutemi Different?</h2>
+            <p>Unlike traditional apps, Nutemi listens to how you feel, understands your emotional patterns, and guides
+              you with mindful nutrition advice — not just numbers or calories.</p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="screen-slide">
+            <app-scroll-slider></app-scroll-slider>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="title-block">
+            <h2>It’s Not Just Food. It’s How You Feel.</h2>
+            <p>With gentle guidance, emotional awareness, and mindful nutrition insights, Nutemi helps you build habits
+              that nourish both your body and your mind.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-8">
+          <div class="block-item">
+            <div class="block-title">
+              <h3>Mindful Nutrition Tracking</h3>
+              <p>Combining intelligent insights with a human touch to support real, sustainable change.</p>
+            </div>
+            <div class="bobble-step" animateOnScroll="bounceIn"
+                 [threshold]="1"
+                 [hideInitially]="true"
+                 [animationDelay]="200"></div>
+            <app-photo-meal animateOnScroll="bounceIn"
+                            [threshold]="1"
+                            [hideInitially]="true"
+                            [animationDelay]="400"></app-photo-meal>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="block-item wave-item">
+            <h3>Hydration Reminders</h3>
+            <p>Stay hydrated effortlessly with kind, daily reminders — small steps, big difference.</p>
+            <div class="bobble-water"></div>
+          </div>
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="block-item wave-item">
+            <h3>Motivational Support</h3>
+            <p>Nutemi cares how you feel and adapts to keep you encouraged and balanced.</p>
+            <div class="message">
+              Hi Mike! Today feels calm 🥰 Let’s keep the balance going
+            </div>
+          </div>
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-8">
+          <div class="block-item">
+            <div class="block-title">
+              <h3>Mindful Nutrition Tracking</h3>
+              <p>Combining intelligent insights with a human touch to support real, sustainable change.</p>
+            </div>
+            <div class="chat-block">
+              <div animateOnScroll="fadeInUp"
+                   [threshold]="1"
+                   [hideInitially]="true"
+                   [animationDelay]="400">
+                <div class="assistant-message">
+                  <strong>Tuna is a great choice! 🐟</strong>
+                  <p>Tuna brings you quality protein and healthy fats to support muscle and energy.</p>
+                  <p><strong>Calories:</strong>~320 kcal</p>
+                  <p><strong>Advice:</strong> Next time, you can add some fresh veggies or a side salad for extra fiber
+                    and vitamins. 🌿🥗</p>
+                </div>
+              </div>
+              <div class="bobble-question" animateOnScroll="bounceIn"
+                   [threshold]="1"
+                   [hideInitially]="true"
+                   [animationDelay]="200">
+                <img src="/images/19.svg" alt="">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="block block-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="black-block">
+            <div class="back-block">
+              <div animateOnScroll="fadeInUp"
+                   [threshold]="1"
+                   [hideInitially]="true"
+                   [animationDelay]="1500">
+                <div class="left-img"></div>
+              </div>
+              <div animateOnScroll="fadeInDown"
+                   [threshold]="1"
+                   [hideInitially]="true"
+                   [animationDelay]="1500">
+                <div class="right-img"></div>
+              </div>
+            </div>
+            <h2 class="title">
+              <span>Your Emotions Matter.</span>
+              <span>Nutemi is listening</span>
+            </h2>
+            <div class="emotions">
+              <ul>
+
+                <li animateOnScroll="bounceIn"
+                    [threshold]="1"
+                    [hideInitially]="true"
+                    [animationDelay]="400"><span>terrible</span>😠
+                </li>
+                <li animateOnScroll="bounceIn"
+                    [threshold]="1"
+                    [hideInitially]="true"
+                    [animationDelay]="350"><span>bad</span>😞
+                </li>
+                <li animateOnScroll="bounceIn"
+                    [threshold]="1"
+                    [hideInitially]="true"
+                    [animationDelay]="300"><span>anxious</span>😰
+                </li>
+                <li animateOnScroll="bounceIn"
+                    [threshold]="1"
+                    [hideInitially]="true"
+                    [animationDelay]="250"><span>meh</span>😐
+                </li>
+                <li animateOnScroll="bounceIn"
+                    [threshold]="1"
+                    [hideInitially]="true"
+                    [animationDelay]="200"><span>okay</span>🙂
+                </li>
+                <li animateOnScroll="bounceIn"
+                    [threshold]="1"
+                    [hideInitially]="true"
+                    [animationDelay]="150"><span>loved</span>🥰
+                </li>
+                <li animateOnScroll="bounceIn"
+                    [threshold]="1"
+                    [hideInitially]="true"
+                    [animationDelay]="100"><span>great</span>😄
+                </li>
+                <li animateOnScroll="bounceIn"
+                    [threshold]="1"
+                    [hideInitially]="true"
+                    [animationDelay]="50"><span>awesome</span>😍
+                </li>
+              </ul>
+            </div>
+            <div class="call-action">
+              <p>No matter how you feel today, Nutemi helps you stay connected to your body, your progress, and your goals
+                —
+                with kindness, not pressure.</p>
+              <div class="links" animateOnScroll="fadeInUp"
+                   [threshold]="1"
+                   [hideInitially]="true"
+                   [animationDelay]="450">
+                <a [href]=appUrl target="_blank"><span class="txt apple-btn">App Store</span></a>
+<!--                <a [href]=appUrl target="_blank"><span class="txt google-btn">Google Play</span></a>-->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="stars" animateOnScroll="fadeInDown"
+               [threshold]="1"
+               [hideInitially]="true"
+               [animationDelay]="450">⭐️⭐️⭐️⭐️⭐️
+          </div>
+          <h3>Change the way you think about food —<br>with AI, Empathy, and Calm.</h3>
+          <p>Speak naturally. Nutemi listens, understands, and guides you in real time <strong>— with care, clarity, and
+            calm.</strong></p>
+          <div class="cta">
+            <div class="txt-cta">
+              <span>Have a question?</span>
+            </div>
+
+            <button class="btn-speech" animateOnScroll="bounceIn"
+                    [animationDelay]="200"
+                    [threshold]=".5"
+                    (click)="isConnected ? stopVoiceAssistant() : startVoiceAssistant()">
+              <div class="outer">
+                <div class="inner">
+                  <div class="animated-speech">
+                    @if (isConnected) {
+                      <div class="stop-q"></div>
+                    } @else {
+                      <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"/>
+                    }
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="footer">
+            <div class="row">
+              <div class="col-12 col-lg-4">
+                <div class="logo">
+                  <span class="icon">N</span>Nutemi
+                </div>
+                <div class="msg-footer">Nutemi cares how you feel and adapts to keep you encouraged and balanced.</div>
+              </div>
+              <div class="col-12 col-lg-8">
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <ul>
+                      <li>Menu:</li>
+                      <li><a [routerLink]="['/']" fragment="futures">Features</a></li>
+                      <li><a [routerLink]="['/']" fragment="about">About Nutemi</a></li>
+                      <li><a href="#">AI Disclaimer</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <ul>
+                      <li>Social:</li>
+                      <li><a href="https://www.instagram.com/nutemi.ai/" target="_blank">Instagram</a></li>
+                      <li><a href="https://www.facebook.com/profile.php?id=61574534271761" target="_blank">Facebook</a></li>
+                      <li><a href="https://www.tiktok.com/@nutemi.ai" target="_blank">TikTok</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4">
+                <div class="links">
+                  <a class="btn btn-primary"  [href]=appUrl target="_blank">
+                    <img src="/images/1.svg" alt="">
+                    <span>App Store</span>
+                  </a>
+<!--                  <a class="btn btn-primary"  [href]=appUrl target="_blank">-->
+<!--                    <img src="/images/2.svg" alt="">-->
+<!--                    <span>Google Play</span>-->
+<!--                  </a>-->
+
+                </div>
+              </div>
+              <div class="col-12 col-lg-8">
+                <div class="copyright">© 2024 - {{ year }} Nutemi — Your Calm Nutrition Companion. All rights reserved.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="prod-hunt">
+    <a href="https://www.producthunt.com/products/nutemi-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-nutemi&#0045;ai" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1009149&theme=light&t=1756197680604" alt="Nutemi&#0032;AI - AI&#0045;powered&#0032;meal&#0032;and&#0032;nutrient&#0032;tracking | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+  </div>
+} @else {
+  <app-mobile-view></app-mobile-view>
+}

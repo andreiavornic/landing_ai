@@ -1,13 +1,136 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>LandingAi</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Charset & Rendering -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary SEO -->
+  <title>Nutemi — Your AI Nutrition Coach & Meal Journal</title>
+  <meta name="description" content="Nutemi is your AI nutrition companion: track meals by photo/voice, get instant feedback, and personalized plans. Build habits with empathetic, data-driven guidance." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://nutemi.ai/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0EA5E9" />
+
+  <!-- Language alternates (optional, keep if you ship i18n routes) -->
+  <link rel="alternate" href="https://nutemi.ai/" hreflang="en" />
+  <link rel="alternate" href="https://nutemi.ai/" hreflang="x-default" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Nutemi" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nutemi.ai/" />
+  <meta property="og:title" content="Nutemi — Your AI Nutrition Coach & Meal Journal" />
+  <meta property="og:description" content="Track meals by photo/voice, see instant feedback, personalized plans, and habit nudges that actually stick." />
+  <meta property="og:image" content="https://nutemi.ai/og/nutemi-og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+<!--  &lt;!&ndash; Twitter &ndash;&gt;-->
+<!--  <meta name="twitter:card" content="summary_large_image" />-->
+<!--  <meta name="twitter:site" content="@UPDATE_ME_TWITTER" />-->
+<!--  <meta name="twitter:title" content="Nutemi — Your AI Nutrition Coach & Meal Journal" />-->
+<!--  <meta name="twitter:description" content="AI that understands your meals and goals. Photo/voice logging, instant feedback, personalized plans." />-->
+<!--  <meta name="twitter:image" content="https://nutemi.ai/og/nutemi-og.png" />-->
+
+  <!-- PWA / Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="Nutemi" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- If using a webfont, preload it (example below, update href): -->
+  <!-- <link rel="preload" as="font" type="font/woff2" href="/fonts/YourFont.woff2" crossorigin> -->
+
+  <!-- Base HREF for Angular routing -->
+  <base href="/" />
+
+  <!-- Structured Data (SoftwareApplication) -->
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Nutemi",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS, Web",
+      "description": "An AI nutrition companion that logs meals via photo/voice, gives instant nutritional feedback, and builds healthy habits with personalized plans.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Weekly Plan",
+          "price": "2.99",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31"
+        },
+        {
+          "@type": "Offer",
+          "name": "Monthly Plan",
+          "price": "6.99",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31"
+        },
+        {
+          "@type": "Offer",
+          "name": "Yearly Plan",
+          "price": "49.99",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2026-12-31"
+        }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Nutemi"
+      },
+      "url": "https://nutemi.ai/",
+      "image": "https://nutemi.ai/og/nutemi-og.png",
+//      "aggregateRating": {
+//        "@type": "AggregateRating",
+//        "ratingValue": "4.8",
+//        "ratingCount": "120"
+//      },
+      "potentialAction": {
+        "@type": "InstallAction",
+        "target": "https://apps.apple.com/us/app/nutemi-ai/id6746331232"
+      }
+    }
+  </script>
+
+  <!-- CSP (tighten as you finalize public/domains) -->
+  <!--
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self';
+                 img-src 'self' https: data:;
+                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+                 font-src 'self' https://fonts.gstatic.com data:;
+                 script-src 'self';
+                 connect-src 'self' https://api.nutemi.ai;">
+  -->
+
+  <!-- Misc -->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="apple-itunes-app" content="app-id=6746331232, affiliate-data=, app-argument=" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMR0YFDDXJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ZMR0YFDDXJ');
+  </script>
 </head>
 <body>
-  <app-root></app-root>
+<noscript>
+  Nutemi works best with JavaScript enabled. Please enable it to continue.
+</noscript>
+<app-root></app-root>
 </body>
 </html>

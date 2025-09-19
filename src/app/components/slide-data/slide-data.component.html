@@ -1,0 +1,24 @@
+<div class="slider-container" #sliderContainer>
+  <div class="back-slide">
+  </div>
+  <div class="main-slide">
+    <div class="text-slide">
+      <div class="nav-slide">
+        <div class="item">
+          <button (click)="changeActiveSlide('12')" [class.active]="activeSlide === '12'">Tracks meals & hydration</button>
+          <button (click)="changeActiveSlide('12_1')" [class.active]="activeSlide === '12_1'">Supports your emotions</button>
+          <button (click)="changeActiveSlide('12_2')" [class.active]="activeSlide === '12_2'">AI-powered, voice-friendly</button>
+          <button (click)="changeActiveSlide('12_3')" [class.active]="activeSlide === '12_3'">Calm design, human warmth</button>
+        </div>
+        <button class="try-btn" (click)="redirectToExternalLink()">Try It Now</button>
+      </div>
+    </div>
+    <div class="phone-slide">
+      <div class="shape-phone">
+        <div class="img-container">
+          <img src="/images/{{activeSlide}}.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
